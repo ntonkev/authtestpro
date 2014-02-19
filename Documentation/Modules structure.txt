@@ -1,0 +1,45 @@
+APIs access point layer:
+	web play 2 application controllers
+	web play2-mini controllers
+
+HELPERS layer 
+	does serialization from/to (BUSINESS MODEL, JSON)
+	SET / GET Sessions values
+	Some common utilities functions like: conversions, validations...
+	Logging
+	
+Contract layer
+	provides access to BLL layer
+	
+BLL layes
+	Provides business logic functions and mapers from / to (BUSINESS MODEL, DATA MODELS)
+	Reference and calls to DAL layer
+	
+DAL layer
+	Providates functions for data operations(CRUD and SEEK)
+	
+SERVICING layer
+	Third parties integrations, aws sns....	
+	
+Comes the JSON request to controller
+
+Serialize this JSON request to BUSINESS MODEL
+
+the Contract layer calls BLL with this BUSINESS MODEL
+
+BLL maps BUSINESS MODEL to DATA MODELS
+
+BLL calls DAL with DATA MODELS
+
+DAL performs: Insert, update, delete, seek, filtering
+as a result of that DAL returns state OR DATA MODELS
+
+*Result(state OR DATA MODELS) goes back to BLL
+
+BLL maps back *Result to BUSINESS MODEL
+
+BLL Brings *Result to the Contract
+
+Than goes to controler
+
+Gets Serialized and shipped as a responce to the client
