@@ -1,0 +1,7 @@
+CREATE EXTENSION "uuid-ossp";
+
+CREATE SCHEMA dict;
+
+CREATE SCHEMA auth;
+
+CREATE SCHEMA main;
