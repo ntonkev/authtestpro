@@ -1,12 +1,16 @@
 package controllers
 
+import Traits.{IService}
 import play.api._
 import play.api.mvc._
+import scaldi.{Injectable, Injector}
 
-object Application extends Controller {
+class Application(implicit inj: Injector) extends Controller with Injectable {
+  val service = inject [IService]
 
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+    val str: String = "TEST calling service.doSomething: Your new application is ready now !!!"
+    Ok(views.html.index(service.doSomething(str)))
   }
 
 }

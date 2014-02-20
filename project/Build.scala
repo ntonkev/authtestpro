@@ -7,12 +7,11 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   libraryDependencies ++= Seq(
-
+    "com.github.scaldi" %% "scaldi-play" % "0.2.2"
   )
 
   val appName         = "authtestpro"
   val appVersion      = "1.0-SNAPSHOT"
-
 
   val datamodels = play.Project(appName + "-datamodels", appVersion, path = file("modules/data.models"))
 
