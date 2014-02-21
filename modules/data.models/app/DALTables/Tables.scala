@@ -1,6 +1,10 @@
-package Tables
+package DALTables
 // AUTO-GENERATED Slick data model
 /** Stand-alone Slick data model for immediate use */
+
+import scala.slick.driver
+//import scala.slick.lifted.TableQuery
+
 object DataModel extends {
   val profile = scala.slick.driver.PostgresDriver
 } with Tables
@@ -200,7 +204,9 @@ trait Tables {
     val systemstatusid: Column[Int] = column[Int]("systemstatusid")
   }
   /** Collection-like TableQuery object for table User */
-  lazy val User = new TableQuery(tag => new User(tag))
+  //lazy val User = new TableQuery(tag => new User(tag))
+  val User = TableQuery[User]
+
 
   /** Entity class storing rows of table Userinrole
    *  @param userid Database column userid 
