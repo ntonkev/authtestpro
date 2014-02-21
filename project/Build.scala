@@ -8,6 +8,9 @@ object ApplicationBuild extends Build {
 
   libraryDependencies ++= Seq(
     "com.github.scaldi" %% "scaldi-play" % "0.2.2"
+    //,"org.postgresql" % "postgresql" % "9.2-1003-jdbc4",
+    //,"com.typesafe.slick" %% "slick" % "2.0.1-RC1",
+    //,"com.typesafe.play" %% "play-slick" % "0.6.0.1"
   )
 
   val appName         = "authtestpro"
